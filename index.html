@@ -10,18 +10,18 @@
     :root {
       --sky-top: #f4fff2;
       --sky-bottom: #e9f8ff;
-      --text: #1d3d2f;
-      --muted: #3f5f53;
-      --primary: #2f9e67;
-      --primary-2: #62be8f;
+      --text: #5a3740;
+      --muted: #7a5962;
+      --primary: #d06a8f;
+      --primary-2: #e493b0;
       --accent: #ffd166;
-      --surface: rgba(255, 255, 255, 0.72);
-      --surface-strong: rgba(255, 255, 255, 0.92);
-      --card-back-1: #2d8a64;
-      --card-back-2: #55b98d;
-      --shadow: 0 18px 40px rgba(36, 78, 58, 0.16);
+      --surface: rgba(255, 255, 255, 0.84);
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --card-back-1: #c66a8c;
+      --card-back-2: #df93b1;
+      --shadow: 0 18px 40px rgba(109, 68, 83, 0.18);
       --radius: 22px;
-      --page-photo: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1900&q=80');
+      --page-photo: url('./assets/ant7119_a_delicate_watercolor_flowers_pink_tones_high_resolut_cc02b3aa-fc34-455e-b7e9-b1e4cf255eaf_0.png');
     }
 
     * {
@@ -31,7 +31,7 @@
     body {
       margin: 0;
       font-family: 'Heebo', sans-serif;
-      background: linear-gradient(160deg, var(--sky-top), var(--sky-bottom));
+      background-color: #fdf7f9;
       color: var(--text);
       min-height: 100vh;
       position: relative;
@@ -41,32 +41,16 @@
     body::before {
       content: "";
       position: fixed;
-      inset: -2%;
+      inset: 0;
       background-image:
-        linear-gradient(160deg, rgba(244, 255, 242, 0.75), rgba(233, 248, 255, 0.8)),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.52)),
         var(--page-photo);
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       z-index: -2;
-      filter: saturate(1.15) brightness(1.06);
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 12% 20%, rgba(255, 209, 102, 0.28), transparent 38%),
-        radial-gradient(circle at 80% 14%, rgba(98, 190, 143, 0.24), transparent 42%),
-        radial-gradient(circle at 76% 82%, rgba(143, 224, 184, 0.22), transparent 36%);
-      z-index: -1;
-      pointer-events: none;
-      animation: bloom 18s ease-in-out infinite alternate;
-    }
-
-    @keyframes bloom {
-      from { transform: scale(1) translateY(0); }
-      to { transform: scale(1.06) translateY(-10px); }
+      filter: saturate(1.03) brightness(1.01);
     }
 
     .container {
@@ -76,9 +60,9 @@
       border-radius: 32px;
       background: var(--surface);
       border: 1px solid rgba(255, 255, 255, 0.75);
-      box-shadow: 0 20px 55px rgba(46, 92, 67, 0.15);
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px);
+      box-shadow: 0 20px 55px rgba(117, 74, 89, 0.18);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
 
     .hero {
@@ -91,7 +75,7 @@
       font-family: 'Secular One', 'Heebo', sans-serif;
       font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: 0.4px;
-      color: #245b43;
+      color: #8a3e5d;
       text-shadow: 0 6px 16px rgba(255, 255, 255, 0.7);
     }
 
@@ -138,7 +122,7 @@
     }
 
     button:focus-visible {
-      outline: 3px solid rgba(47, 158, 103, 0.3);
+      outline: 3px solid rgba(208, 106, 143, 0.3);
       outline-offset: 2px;
     }
 
@@ -195,8 +179,8 @@
     .front {
       background:
         radial-gradient(circle at 84% 18%, rgba(255, 209, 102, 0.34), transparent 36%),
-        linear-gradient(145deg, #ffffff, #f4fff7);
-      border: 2px solid rgba(72, 144, 103, 0.15);
+        linear-gradient(145deg, #ffffff, #fff4f8);
+      border: 2px solid rgba(198, 106, 140, 0.16);
       flex-direction: column;
       gap: 12px;
     }
@@ -207,11 +191,11 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(140deg, #2f9e67, #5ab788);
+      background: linear-gradient(140deg, #c7678b, #e08dad);
       color: white;
       font-size: 1.2rem;
       font-weight: 800;
-      box-shadow: 0 10px 20px rgba(47, 158, 103, 0.3);
+      box-shadow: 0 10px 20px rgba(198, 106, 140, 0.34);
     }
 
     .front .label {
@@ -232,7 +216,7 @@
       font-size: 1rem;
       font-weight: 700;
       border: 1px solid rgba(255, 255, 255, 0.18);
-      text-shadow: 0 2px 8px rgba(22, 61, 45, 0.28);
+      text-shadow: 0 2px 8px rgba(88, 42, 58, 0.28);
     }
 
     .legend {
@@ -287,6 +271,11 @@
         margin: 10px;
         padding: 16px;
         border-radius: 22px;
+      }
+
+      body::before {
+        background-attachment: scroll;
+        background-position: 22% center;
       }
     }
   </style>
