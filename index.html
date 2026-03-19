@@ -161,17 +161,17 @@
       transform-style: preserve-3d;
       transition: transform 0.7s ease;
       cursor: pointer;
-      animation: card-in 0.5s ease both;
+      animation: card-in 0.45s ease;
     }
 
     @keyframes card-in {
       from {
         opacity: 0;
-        transform: translateY(16px) rotateX(8deg);
+        filter: blur(1px);
       }
       to {
         opacity: 1;
-        transform: translateY(0) rotateX(0);
+        filter: blur(0);
       }
     }
 
